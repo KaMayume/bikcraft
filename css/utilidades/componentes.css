@@ -1,0 +1,110 @@
+.container {
+  box-sizing: border-box; /*o valor do padding não irá somar. Caso não colocassemos o max-width seria de 1160px*/
+  max-width: 1200px; /*quando chega nesse valor o cntr para de crescer*/
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  /*margin-left e right é para resolver o problema do conteúdo que ficava alinhado no canto e não ao centro quando crescia o cntr*/
+}
+
+.botao {
+  display: inline-block;
+  padding: 16px 32px;
+  background: linear-gradient(#ffbb00, #f2a50c);
+  border-radius: 4px;
+  /*box shadow os valores são: x, y, blur-radius(valor que vai expandir), tamanho da fonte(quanto que cresce além do tamanho do elemento) e depois a cor */
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  color: var(--cor-p5);
+  font: 600 1.125rem/1.35 "Poppins", sans-serif;
+  max-width: max-content;
+  border: none;
+  cursor: pointer;
+}
+
+.botao:hover {
+  background: linear-gradient(#ffb60d, #e59317);
+}
+
+.botao.secundario {
+  background: var(--cor-10);
+  color: var(--cor-2);
+}
+
+.botao.secundario:hover {
+  background: var(--cor-9);
+}
+
+.botao.seta {
+  display: flex;
+  align-items: center;
+}
+
+.botao.seta::after {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 10px;
+  margin-left: 12px;
+  background: url("../../img/icones/seta.svg");
+  transition: transform 0.2s;
+}
+
+/*quando passar o mouse em cima mover o after*/
+.botao.seta:hover:after {
+  transform: translateX(4px);
+}
+
+@media (max-width: 600px) {
+  .botao {
+    padding: 12px 16px;
+    font-size: 1rem;
+  }
+}
+
+.link {
+  display: inline-block;
+  color: var(--cor-p1);
+  font: 500 1.5rem/1.5 "Poppins", sans-serif;
+  text-transform: uppercase;
+}
+
+.link::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: currentColor; /*utiliza a cor que definiu no elemento pai (link)*/
+}
+
+.link:hover {
+  color: var(--cor-0);
+}
+
+/*titulo internos*/
+.titulo-bg {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: var(--cor-11);
+}
+
+.titulo {
+  background: url("../../img/dec/top-right.svg") no-repeat top right 20px; /*decoração*/
+}
+
+.titulo p {
+  margin-bottom: 4px;
+}
+
+@media (max-width: 800px) {
+  .titulo-bg {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .titulo p {
+    font-size: 1rem;
+    text-transform: lowercase;
+    font-weight: 400;
+  }
+}
