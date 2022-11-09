@@ -40,7 +40,8 @@
 }
 
 /*Sublinhado quando passamos o mouse em cima*/
-.header-menu a:hover::after {
+.header-menu a:hover::after
+{
   width: 100%;
   /*irá pegar a largura do elemento-pai.*/
 }
